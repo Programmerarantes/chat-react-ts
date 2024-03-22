@@ -10,7 +10,7 @@ type ChatContext = {
 export const ChatContext = createContext<ChatContext | null>(null)
 
 export const ChatProvider = ({children}: {children: ReactNode}) => {
-    const [chat, dispatch] = useReducer(chatReducer, [])
+    const [chat, dispatch] = useReducer(chatReducer, [] as Message[])
 
     const addMessage = (user: string, text: string) => {
         dispatch({
